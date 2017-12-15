@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<meta http-equiv="refresh" content="0; url=http://jgohyeah.github.io/HPVSimulator/Build/HTML5/index.html" />-->
+<title>HPV Simulator</title>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="icon" href="../image/hpvsim.ico">
+</head>
+<body>
+	<header>
+		<h1 id="title">HPV Simulator</h1>
+		<nav id="nav_bar">
+			<a href="../index.html" class="leftnava">Home</a><a href="../Build/HTML5/index.html">Play Online</a><a href="download.html">Download App</a><a href="help.html" class="nav-active">How to Play</a><a href="https://github.com/jgOhYeah/HPVSimulatorSource" target="_blank">Source Code</a><a href="about.html">About</a>
+		</nav>
+		<script>
+		$(document).ready(function() {
+			var stickyNavTop = $('#nav_bar').offset().top;
+			var itemBelowNavpadding = $('#item_below_nav').css("padding-top");
+			var stickyNav = function(){
+				var scrollTop = $(window).scrollTop();
+				if (scrollTop > stickyNavTop) { 
+					$('#nav_bar').addClass('navbar_fixed');
+					$('nav a').css("border-top-style", "none");
+					$('#item_below_nav').css("padding-top", $('#nav_bar').height());
+				} else {
+					$('#nav_bar').removeClass('navbar_fixed');
+					$('nav a').css("border-top-style", "solid");
+					$('#item_below_nav').css("padding-top", itemBelowNavpadding);
+				}
+			};
+			stickyNav();	
+			$(window).scroll(function() {
+				stickyNav();
+			});
+		});
+		</script>
+	</header>
+	<h2>How to play</h2>
+	<p>
+		<b>To Steer:</b> The Left and Right arrow keys or the "A" and "D" keys.<br>
+		<b>To Pedal:</b> The space bar.<br>
+		<b>To Change Gear:</b> Up and Down keys or "W" and "S" keys.<br>
+		<b>To Brake:</b> You do not actually need brakes but if you feel safer, the Left "Alt" key.<br>
+		<b>To Change Views between Third Person and First Person (the rider):</b> The "M" key.<br>
+		<b>The Horn:</b> "B" key.<br>
+		<b>To Exit the program (not on the website version):</b> Press the Escape key or click the "Quit" Button on the main menu.
+	</p>
+	<p>
+		You can change the default buttons on standalone installations (running the executable file, not on a website for Windows and Macintosh) in the configuration menu that appears before the game is run.
+	</p>
+</body>
+</html>

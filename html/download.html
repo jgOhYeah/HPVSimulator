@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<meta http-equiv="refresh" content="0; url=http://jgohyeah.github.io/HPVSimulator/Build/HTML5/index.html" />-->
+<title>HPV Simulator</title>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="icon" href="../image/hpvsim.ico">
+</head>
+<body>
+	<header>
+		<h1 id="title">HPV Simulator</h1>
+		<nav id="nav_bar">
+			<a href="../index.html" class="leftnava">Home</a><a href="../Build/HTML5/index.html">Play Online</a><a href="download.html" class="nav-active">Download App</a><a href="help.html">How to Play</a><a href="https://github.com/jgOhYeah/HPVSimulatorSource" target="_blank">Source Code</a><a href="about.html">About</a>
+		</nav>
+		<script>
+		$(document).ready(function() {
+			var stickyNavTop = $('#nav_bar').offset().top;
+			var itemBelowNavpadding = $('#item_below_nav').css("padding-top");
+			var stickyNav = function(){
+				var scrollTop = $(window).scrollTop();
+				if (scrollTop > stickyNavTop) { 
+					$('#nav_bar').addClass('navbar_fixed');
+					$('nav a').css("border-top-style", "none");
+					$('#item_below_nav').css("padding-top", $('#nav_bar').height());
+				} else {
+					$('#nav_bar').removeClass('navbar_fixed');
+					$('nav a').css("border-top-style", "solid");
+					$('#item_below_nav').css("padding-top", itemBelowNavpadding);
+				}
+			};
+			stickyNav();	
+			$(window).scroll(function() {
+				stickyNav();
+			});
+		});
+		</script>
+	</header>
+	<h2>How to run the HPV Simulator as an app / program</h2>
+	<h3>Windows</h3>
+	<p>
+		You can download a portable (does not have to be installed) .exe file for use on Windows systems. This is the best option if you have a computer running Windows.<br>
+		<a href="../Build/Windows/HPVSimulator_Windows_x86_x64.zip">Click here to download a zip file of the game for WINDOWS</a><br>
+		To run, download the zip file from the link above and unzip the contents into a folder on your computer where you want to keep it. Click on the file named "HPV.exe" to run it. If you have issues, make sure that the folder titled "HPV_Data" is in the same directory as "HPV.exe".
+	</p>
+	<h3>Macintosh</h3>
+	<p>
+		You can download an application for Macintosh, but there has been some issues running it. It is probably more advisable to play it online at the moment if it does not work. You have to allow third party applications in settings somewhere and then it may or may not work.<br>
+		<a href="../Build/Macintosh/Macintosh.app.zip">Click here to download a zip file of the game for Macintosh</a><br>
+		To run, download the zip file from the link above and unzip the contents into a folder on your computer where you want to keep it. Click on the app icon to run it. It will either throw up an error message saying something about security, work or displat some other message and not run.
+		In the case that a message about security is displayed, you will have to allow the computer to run the app in settings.
+	</p>
+</body>
+</html>

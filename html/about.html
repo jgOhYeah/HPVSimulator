@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<meta http-equiv="refresh" content="0; url=http://jgohyeah.github.io/HPVSimulator/Build/HTML5/index.html" />-->
+<title>HPV Simulator</title>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="icon" href="../image/hpvsim.ico">
+</head>
+<body>
+	<header>
+		<h1 id="title">HPV Simulator</h1>
+		<nav id="nav_bar">
+			<a href="../index.html" class="leftnava">Home</a><a href="../Build/HTML5/index.html">Play Online</a><a href="download.html">Download App</a><a href="help.html">How to Play</a><a href="https://github.com/jgOhYeah/HPVSimulatorSource" target="_blank">Source Code</a><a href="about.html" class="nav-active">About</a>
+		</nav>
+		<script>
+		$(document).ready(function() {
+			var stickyNavTop = $('#nav_bar').offset().top;
+			var itemBelowNavpadding = $('#item_below_nav').css("padding-top");
+			var stickyNav = function(){
+				var scrollTop = $(window).scrollTop();
+				if (scrollTop > stickyNavTop) { 
+					$('#nav_bar').addClass('navbar_fixed');
+					$('nav a').css("border-top-style", "none");
+					$('#item_below_nav').css("padding-top", $('#nav_bar').height());
+				} else {
+					$('#nav_bar').removeClass('navbar_fixed');
+					$('nav a').css("border-top-style", "solid");
+					$('#item_below_nav').css("padding-top", itemBelowNavpadding);
+				}
+			};
+			stickyNav();	
+			$(window).scroll(function() {
+				stickyNav();
+			});
+		});
+		</script>
+	</header>
+	<h2>About the HPV Simulator</h2>
+	<p>
+		The lunar surface, lunar lander and image of Earth (not the stars in the background) for the moon level came from <a href="https://nasa3d.arc.nasa.gov/models" target="_blank">NASA</a>.<br>
+		The model of the moon viewed from a long distance came from nicola3dmodels at <a href="https://free3d.com/3d-model/moon-17150.html" target="_blank">https://free3d.com/3d-model/moon-17150.html</a>
+	</p>
+	<p>Thanks to Ashoo for modelling stuff</p>
+</body>
+</html>

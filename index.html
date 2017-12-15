@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<meta http-equiv="refresh" content="0; url=http://jgohyeah.github.io/HPVSimulator/Build/HTML5/index.html" />-->
+<title>HPV Simulator</title>
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/main.css">
+<link rel="icon" href="image/hpvsim.ico">
+</head>
+<body>
+	<header>
+		<h1 id="title">HPV Simulator</h1>
+		<nav id="nav_bar">
+			<a href="index.html" class="leftnava nav-active">Home</a><a href="Build/HTML5/index.html">Play Online</a><a href="html/download.html">Download App</a><a href="html/help.html">How to Play</a><a href="https://github.com/jgOhYeah/HPVSimulatorSource" target="_blank">Source Code</a><a href="html/about.html">About</a>
+		</nav>
+		<script>
+		$(document).ready(function() {
+			var stickyNavTop = $('#nav_bar').offset().top;
+			var itemBelowNavpadding = $('#item_below_nav').css("padding-top");
+			var stickyNav = function(){
+				var scrollTop = $(window).scrollTop();
+				if (scrollTop > stickyNavTop) { 
+					$('#nav_bar').addClass('navbar_fixed');
+					$('nav a').css("border-top-style", "none");
+					$('#item_below_nav').css("padding-top", $('#nav_bar').height());
+				} else {
+					$('#nav_bar').removeClass('navbar_fixed');
+					$('nav a').css("border-top-style", "solid");
+					$('#item_below_nav').css("padding-top", itemBelowNavpadding);
+				}
+			};
+			stickyNav();	
+			$(window).scroll(function() {
+				stickyNav();
+			});
+		});
+		</script>
+	</header>
+	<img id="item_below_nav" src="image/velodromefrontbanner.jpg" alt="HPV Simulator screenshot" width="100%">
+	<div class="update">
+		<h3>HPV Simulator 2.0 will be released soon, with lots of new features and bug fixes.</h3>
+		<p>
+			<b>Expected release date:</b> End of January 2018<br>
+			<b>Improvements and features are expected to include:</b>
+			<ul>
+				<li>New models</li>
+				<li>Maryborough level</li>
+				<li>Bug fixes such as the trike not shaking around as much</li>
+			</ul>
+		</p>
+	</div>
+	<h2>Welcome to the HPV Simulator</h2>
+	<p>
+		You have just found the website for the HPV Simulator - the best game you will ever find.<br>
+		Here you can pointlessly drive a virtual Human Powered Vehicle around for as long as you like.
+	</p>
+	<p>
+		Human Powered Vehicles are recumbant tricycles equiped with an aerodynamic shell.
+		They are much faster and more energy efficient than normal two wheeled bicycles.
+	</p>
+	<p>
+		The HPV Simulator is a small game made with the Unity Game Engine. Feel free to download the sourcecode and modify it to suit your needs and platforms.
+		The game was put together in Unity 2017.1.1f1.
+	</p>
+	<img src="image/velodromerearbanner.jpg" class="extra-padding" alt="HPV Simulator screenshot" width="100%">
+</body>
+</html>
